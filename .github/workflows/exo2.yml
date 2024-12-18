@@ -1,0 +1,16 @@
+name: Detection
+on: [push, pull_request]
+
+jobs:
+  Push_action:
+    runs-on: ubuntu-latest
+    if: ${{github.event_name == 'push'}}
+    steps:
+      - name: PULLAction
+        run: echo "C'est un push"
+  Pull_request_action:
+    runs-on: ubuntu-latest
+    if: ${{github.event_name == 'pull_request'}}
+    steps:
+      - name: Pull_requestAction
+        run: echo "c'est un pull_request"
